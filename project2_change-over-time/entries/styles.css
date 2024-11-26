@@ -1,0 +1,29 @@
+body {
+  background-image: none;
+  color: var(--dark-gray);
+}
+
+.content-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drawing {
+  height: calc(100vh - 3rem);
+  aspect-ratio: var(--letter-size);
+  border: 1px solid var(--dark-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.writing {
+  padding-right: 8rem;
+}
+
+.writing p {
+  font-size: 1.5rem;
+  line-height: 175%;
+}

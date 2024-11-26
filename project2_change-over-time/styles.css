@@ -84,6 +84,36 @@ button {
 }
 
 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#about-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--light-gray);
+  transition: 300ms ease-in-out;
+}
+
+#about-button:hover {
+  color: var(--gray);
+}
+
+#close-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 0.5rem;
+  color: var(--gray);
+  transition: 300ms ease-in-out;
+}
+
+#close-button:hover {
+  color: var(--light-gray);
+}
+
+#submit-button {
   background: linear-gradient(to left, var(--light-gray) 50%, var(--dark-gray) 50%);
   background-position: right bottom;
   background-size: 200% 100%;
@@ -95,7 +125,7 @@ a {
   transition: all 400ms ease;
 }
 
-a:hover {
+#submit-button:hover {
   /* color: var(--white); */
   background-position: left bottom;
 }

@@ -10,6 +10,11 @@
 <body>
   <section id="drawing-page" class="page active">
     <div class="main-container">
+      <div id="about-button">
+        <a href="about/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-help"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+        </a>
+      </div>
       <div class="instructions">
         <p>
           Think about someone you are grateful for. Use this space to draw a portrait of them.
@@ -53,12 +58,17 @@
         </div>
       </div>
     </div>
-    <button onclick="switchPage('writing-page')" class="right-corner underline" id="page-2">02. Writing ⟶</button>
+    <button onclick="switchPage('writing-page')" class="right-corner underline" id="page-2">02. Writing 👉</button>
   </section>
   
   <section id="writing-page" class="page">
-    <button onclick="switchPage('drawing-page')" class="left-corner underline" id="page-1">⟵ 01. Drawing</button>
+    <button onclick="switchPage('drawing-page')" class="left-corner underline" id="page-1">👈 01. Drawing</button>
     <div class="main-container">
+      <div id="about-button">
+        <a href="about/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-help"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+        </a>
+      </div>
       <div class="instructions">
         <p>
           Write a note to them or tell the world something about them.
@@ -78,8 +88,8 @@
       </div>
     </div>
 
-    <a href="world/" class="right-corner">
-      Share with World ⟶
+    <a href="world/" class="right-corner" id="submit-button">
+      Share with World 👉
     </a>
 
     </button>

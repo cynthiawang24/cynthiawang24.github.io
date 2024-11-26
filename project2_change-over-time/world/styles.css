@@ -1,0 +1,38 @@
+
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#example {
+  background: yellow;
+}
+
+.entry {
+  display: flex;
+  text-align: center;
+  justify-self: center;
+  align-items: center;
+  width: 6.25rem; 
+  height: 8rem; 
+  background-color: white;
+  border: 1px black solid;
+  cursor: pointer;
+}
+
+.entry span {
+  text-align: center;
+}
+
+.entry .time {
+  display: none;
+}
+
+.entry:hover .drawing {
+  display: none;
+}
+
+.entry:hover .time {
+  display: inline;
+}

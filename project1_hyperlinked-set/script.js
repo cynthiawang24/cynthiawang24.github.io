@@ -11,22 +11,6 @@ $(document).ready(function() {
 
     // Toggle the nested links
     $nestedLinks.toggle();
-
-    // // Check if dayDisplay is a whole number and pause the animation
-    // if (dayDisplay % 1 === 0) {
-    //   pauseAnimation();
-    // }
-
-    // // Scroll to the first nested link's target section
-    // const targetId = $nestedLinks.find('a').attr('href');
-    // if (targetId) {
-    //   $('html, body').animate({
-    //     scrollTop: $(targetId).offset().top
-    //   }, 300);
-    // }
-
-    // Show specific image based on the cycleDisplay and dayDisplay
-    // showSpecificImage(cycleDisplay, dayDisplay);
   });
 
   // MOON ANIMATION SETUP
@@ -34,20 +18,6 @@ $(document).ready(function() {
   let currentIndex = 0;
   let interval;
   let isPaused = false;
-
-  // function showSpecificImage(cycle, day) {
-  //   let index;
-  //   if (cycle === 1 && day >= 1.0 && day < 1.9) index = 0;
-  //   else if (cycle === 1 && day >= 15.0 && day < 15.9) index = 1;
-  //   else if (cycle === 5 && day >= 15.0 && day < 15.9) index = 2;
-  //   else if (cycle === 7 && day >= 15.0 && day < 15.9) index = 3;
-  //   else if (cycle === 8 && day >= 15.0 && day < 15.9) index = 4;
-  //   else if (cycle === 9 && day >= 9.0 && day < 9.9) index = 5;
-  //   else index = currentIndex;
-
-  //   $images.removeClass('active');
-  //   $images.eq(index).addClass('active');
-  // }
 
   function showNextImage() {
     $images.eq(currentIndex).removeClass('active');
@@ -145,22 +115,22 @@ $(document).ready(function() {
 
   function changeLinkColor() {
     $('.link a').css('color', ''); // Reset to default
-    if (cycleDisplay === 1 && dayDisplay >= 1.0 && dayDisplay < 1.9) {
+    if (cycleDisplay === 1 && dayDisplay >= 1.0 && dayDisplay < 4.0) {
       $('.link:has(a:contains("春节")) a').css('color', 'var(--yellow)');
     }
-    if (cycleDisplay === 1 && dayDisplay >= 15.0 && dayDisplay < 15.9) {
+    if (cycleDisplay === 1 && dayDisplay >= 15.0 && dayDisplay < 18.0) {
       $('.link:has(a:contains("元宵节")) a').css('color', 'var(--yellow)');
     }
-    if (cycleDisplay === 5 && dayDisplay >= 15.0 && dayDisplay < 15.9) {
+    if (cycleDisplay === 5 && dayDisplay >= 15.0 && dayDisplay < 18.0) {
       $('.link:has(a:contains("端午节")) a').css('color', 'var(--yellow)');
     }
-    if (cycleDisplay === 7 && dayDisplay >= 15.0 && dayDisplay < 15.9) {
+    if (cycleDisplay === 7 && dayDisplay >= 15.0 && dayDisplay < 18.0) {
       $('.link:has(a:contains("七夕")) a').css('color', 'var(--yellow)');
     }
-    if (cycleDisplay === 8 && dayDisplay >= 15.0 && dayDisplay < 15.9) {
+    if (cycleDisplay === 8 && dayDisplay >= 15.0 && dayDisplay < 18.0) {
       $('.link:has(a:contains("中秋节")) a').css('color', 'var(--yellow)');
     }
-    if (cycleDisplay === 9 && dayDisplay >= 9.0 && dayDisplay < 9.9) {
+    if (cycleDisplay === 9 && dayDisplay >= 9.0 && dayDisplay < 12.0) {
       $('.link:has(a:contains("重阳节")) a').css('color', 'var(--yellow)');
     }
   }

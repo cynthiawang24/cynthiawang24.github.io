@@ -4,45 +4,150 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://use.typekit.net/omq3wgk.css">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"> -->
   <link rel="stylesheet" href="styles.css">
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
 </head>
 <body>
-  <button id="darkmode">Dark Mode</button>
-  <h1>Welcome to Web as Medium 1!</h1>
-  <p>This is an ongoing portfolio of all my work from this course.</p>
-  <div>
-    <h2>Week 1:</h2>
-    <a href="exercise1_hello-world/"><h3>Exercise 1: Hello World</h3></a>
-    <a href="exercise2_handmade-web-html/"><h3>Exercise 2: Handmade Web—HTML</h3></a>
+  <div class="top">
+    <div class="typing-container">
+      <span class="text stagnant-text">
+        Good 
+      </span>
+      <span class="text dynamic-text">
+        Morning ☀️
+      </span>
+    </div>
+    <p>This is Cynthia Wang's portfolio for Web as Medium 1 with Minkyoung Kim.</p>
   </div>
 
-  <div>
-    <h2>Week 2:</h2>
-    <a href="exercise3_handmade-web-css/"><h3>Exercise 3: Handmade Web—CSS</h3></a>
+  <div class="main-content">
+    <div class="side-nav">
+      <div class="section-header">
+        <p>Projects</p>
+      </div>
+      <a class="project-title" data-target="project-0" href="">
+        <p class="number">00</p>
+        <p>Project Proposal</p>
+      </a>
+      <a class="project-title" data-target="project-1" href="projects/hyperlinked-set/">
+        <p class="number">01</p>
+        <p>Hyperlinked Set</p>
+      </a>
+      <a class="project-title" data-target="project-2" href="projects/change-over-time/">
+        <p class="number">02</p>
+        <p>Change Over Time</p>
+      </a>
+
+      <div class="section-header">
+        <p>Exercises</p>
+      </div>
+      <a class="project-title" data-target="exercise-1" href="exercises/hello-world/">
+        <p class="number">01</p>
+        <p>Hello World</p>
+      </a>
+      <a class="project-title" data-target="exercise-2" href="exercises/handmade-web-html/">
+        <p class="number">02</p>
+        <p>Handmade Web—HTML</p>
+      </a>
+      <a class="project-title" data-target="exercise-3" href="exercises/handmade-web-css/">
+        <p class="number">03</p>
+        <p>Handmade Web—CSS</p>
+      </a>
+      <a class="project-title" data-target="exercise-4" href="exercises/css-letterforms-1/">
+        <p class="number">04</p>
+        <p>CSS Letterforms</p>
+      </a>
+      <a class="project-title" data-target="exercise-5" href="exercises/css-letterforms-2/">
+        <p class="number">05</p>
+        <p>CSS Letterforms</p>
+      </a>
+      <a class="project-title" data-target="exercise-6" href="exercises/dark-mode">
+        <p class="number">06</p>
+        <p>Dark Mode</p>
+      </a>
+      <a class="project-title" data-target="exercise-7" href="https://mkimk.github.io/wam1f24/">
+        <p class="number">07</p>
+        <p>Media Query Relay</p>
+      </a>
+
+      <div class="section-header">
+        <p>Topic Presentation</p>
+      </div>
+      <a class="project-title" data-target="ppt" href="">
+        <p class="number">01</p>
+        <p>Users</p>
+      </a>
+    </div>
+  
+    <div class="project-preview">
+      <div class="project-container project" id="project-0">
+        <img src="images/project-proposal.png" alt="" class="">
+        <p>more text</p>
+      </div>
+
+      <div class="project-container project" id="project-1">
+        <video autoplay loop muted playsinline>
+          <source src="images/project1.mp4" type="video/mp4">
+        </video>
+        <p>HI</p>
+      </div>
+      
+      <div class="project-container project" id="project-2">
+        <video autoplay loop muted playsinline>
+          <source src="images/project2.mp4" type="video/mp4">
+        </video>
+        <p>HI</p>
+      </div>
+
+      <div class="project-container project" id="exercise-1">
+        <img src="images/placeholder.png" alt="" class="">
+        <p>hello</p>
+      </div>
+
+      <div class="project-container project" id="exercise-2">
+        <img src="images/placeholder.png" alt="" class="">
+        <p>hello</p>
+      </div>
+
+      <div class="project-container project" id="exercise-3">
+        <img src="images/placeholder.png" alt="" class="">
+        <p>hello</p>
+      </div>
+
+      <div class="project-container project" id="exercise-4">
+        <img src="images/placeholder.png" alt="" class="">
+        <p>hello</p>
+      </div>
+
+      <div class="project-container project" id="exercise-5">
+        <img src="images/placeholder.png" alt="" class="">
+        <p>hello</p>
+      </div>
+
+      <div class="project-container project" id="exercise-6">
+        <img src="images/placeholder.png" alt="" class="">
+        <p>hello</p>
+      </div>
+
+      <div class="project-container project" id="exercise-7">
+        <video autoplay loop muted playsinline>
+          <source src="images/media-query.mp4" type="video/mp4">
+        </video>
+        <p>Rescale browser to see everyone's work!</p>
+      </div>
+
+      <div class="project-container project" id="ppt">
+        <img src="images/topic-presentation.png" alt="" class="">
+        <p>heres some text</p>
+      </div>
+      
+    </div>
   </div>
   
-  <div>
-    <h2>Week 3:</h2>
-    <a href="exercise4_css-letterforms-1/"><h3>Exercise 4: CSS Letterforms</h3></a>
-  </div>
-
-  <div>
-    <h2>Week 4:</h2>
-    <a href="exercise5_css-letterforms-2/"><h3>Exercise 4: CSS Letterforms</h3></a>
-  </div>
-
-  <div>
-    <a href="project1_hyperlinked-set/"><h2>Project 1: Hyperlinked Set</h2></a>
-  </div>
-
-  <div>
-    <a href="project2_change-over-time/"><h2>Project 2: Change over time</h2></a>
-  </div>
-  
+  <script src="script.js"></script>
 </body>
 </html>

@@ -89,13 +89,12 @@ a {
 
 .project {
   display: none;
-  width: 60%;
+  width: 70%;
 }
 
 .project-container {
-  border: 1px red solid;
+  /* border: 1px red solid; */
   display: flex;
-  /* flex-direction: column; */
   text-align: center;
   align-items: center;
   justify-content: center;

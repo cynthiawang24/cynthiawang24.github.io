@@ -1,0 +1,9 @@
+.main-container {
+  flex-direction: column;
+  margin: auto 25%;
+  background: white;
+}
+
+p {
+  font-size: 1.5rem;
+}

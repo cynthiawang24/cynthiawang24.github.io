@@ -1,47 +1,36 @@
 $(document).ready(function() {
-  // Initialize the pause flag
   let isPaused = false;
 
-  // LEFT SIDE LINKS
   $('.link > a').click(function(e) {
-    e.preventDefault(); // Prevent default anchor behavior
+    e.preventDefault();
 
-    // Get the associated nested links
     const $nestedLinks = $(this).parent().find('.nested-links');
-
-    // Hide other open nested-links and only show the clicked one
     $('.nested-links').not($nestedLinks).hide();
-
-    // Toggle the nested links
     $nestedLinks.toggle();
   });
 
-  // Pause animation
+  // Pause
   function pauseAnimation() {
-    clearInterval(interval);  // Clear any existing intervals
+    clearInterval(interval);
     isPaused = true;
     $('#play').prop('disabled', false);
     $('#pause').prop('disabled', true);
-  
-    // Pause the animation using animation-play-state
     $('.moon, .disc').css('animation-play-state', 'paused');
   }
   
-  // Play animation
+  // Play
   function playAnimation() {
     if (isPaused) {
       isPaused = false;
       $('#play').prop('disabled', true);
       $('#pause').prop('disabled', false);
-  
-      // Resume the animation using animation-play-state
       $('.moon, .disc').css('animation-play-state', 'running');
     }
   }
   
-  // Restart animation
+  // Restart
   function restartAnimation() {
-    clearInterval(interval);  // Clear any existing intervals
+    clearInterval(interval);
     $images.removeClass('active');
     currentIndex = 0;
     $images.eq(currentIndex).addClass('active');
@@ -52,13 +41,11 @@ $(document).ready(function() {
     $('#cycleDisplay').text(cycleDisplay);
     $('#dayDisplay').text(dayDisplay);
   
-    // Restart the animation by resetting the play state
     $('.moon, .disc').css({
-      'animation': 'none', // Remove current animation
-      'animation': ''      // Reset animation property
+      'animation': 'none',
+      'animation': ''
     });
-  
-    // Re-apply the animation to restart it
+
     setTimeout(() => {
       $('.moon, .disc').css('animation', 'rotate 15s linear infinite, flip 15s steps(2) infinite');
     }, 10);
@@ -68,7 +55,6 @@ $(document).ready(function() {
     $('#pause').prop('disabled', false);
   }
 
-  // Button event handlers
   $('#pause').click(function() {
     console.log('Pause clicked');
     pauseAnimation();
@@ -98,13 +84,13 @@ $(document).ready(function() {
   function updateCycle() {
     cycleDisplay = (cycleDisplay % 12) + 1;
     $('#cycleDisplay').text(cycleDisplay);
-    changeLinkColor(); // Update link color each cycle
+    changeLinkColor();
   }
 
   function updateDay() {
     dayDisplay = (dayDisplay >= 29.5) ? 1.0 : parseFloat((dayDisplay + 0.1).toFixed(1));
     $('#dayDisplay').text(Math.floor(dayDisplay));
-    changeLinkColor(); // Update link color each day
+    changeLinkColor();
   }
 
   function startCycle() {
@@ -115,7 +101,7 @@ $(document).ready(function() {
   startCycle();
 
   function changeLinkColor() {
-    $('.link a').css('color', ''); // Reset to default
+    $('.link a').css('color', '');
     if (cycleDisplay === 1 && dayDisplay >= 1.0 && dayDisplay < 4.0) {
       $('.link:has(a:contains("春节")) a').css('color', 'var(--yellow)');
     }

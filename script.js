@@ -31,16 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectTitles = document.querySelectorAll('.project-title');
   const projects = document.querySelectorAll('.project');
 
-  // Ensure all projects are hidden by default
   projects.forEach((project) => (project.style.display = 'none'));
 
-  // Add hover event listeners
   projectTitles.forEach((title) => {
     title.addEventListener('mouseenter', () => {
-      // Hide all projects
       projects.forEach((project) => (project.style.display = 'none'));
 
-      // Show the targeted project
       const targetId = title.getAttribute('data-target');
       const targetProject = document.getElementById(targetId);
       if (targetProject) {
@@ -49,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     title.addEventListener('mouseleave', () => {
-      // Optionally hide the project again when hover ends
       const targetId = title.getAttribute('data-target');
       const targetProject = document.getElementById(targetId);
       if (targetProject) {
@@ -58,5 +53,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
-

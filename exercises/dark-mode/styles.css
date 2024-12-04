@@ -9,6 +9,7 @@ button {
   padding: 0.5rem 1rem;
   border: 1px solid black;
   border-radius: 2rem;
+  cursor: pointer;
 }
 
 button::before {
@@ -27,4 +28,5 @@ body.darkmode button{
 	color: white;
   background: linear-gradient(to right, #FCD2AF, #1170CA, #000F3C);
   border: 1px solid white;
+  padding: 0.5rem 1rem;
 }

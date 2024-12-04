@@ -96,13 +96,11 @@
   </section>
 
   <script>
-    // Initial drawing settings
-    let draw_color = "black"; // Default draw color
-    let draw_width = 5; // Default draw width for pencil
+    let draw_color = "black";
+    let draw_width = 5;
     let is_drawing = false;
-    let current_tool = 'pencil'; // Default tool is pencil
+    let current_tool = 'pencil';
 
-    // Function to initialize a canvas
     function initializeCanvas(canvasId) {
       const canvas = document.getElementById(canvasId);
 
@@ -110,15 +108,14 @@
         canvas.width = 612;
         canvas.height = 792;
       } else if (canvasId === 'signature') {
-        canvas.width = 548; // Adjusted for 34.25rem
-        canvas.height = 200; // Adjusted for 12.5rem
+        canvas.width = 548;
+        canvas.height = 200;
       }
 
       const context = canvas.getContext('2d');
       context.fillStyle = "white";
       context.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Event listeners for drawing actions
       canvas.addEventListener('touchstart', (event) => startDrawing(event, canvas, context), false);
       canvas.addEventListener('touchmove', (event) => draw(event, canvas, context), false);
       canvas.addEventListener('mousedown', (event) => startDrawing(event, canvas, context), false);
@@ -130,14 +127,13 @@
 
     function getMousePosition(event, canvas) {
       const rect = canvas.getBoundingClientRect();
-      const scaleX = canvas.width / rect.width; // Horizontal scale factor
-      const scaleY = canvas.height / rect.height; // Vertical scale factor
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
       return {
         x: (event.clientX || event.touches[0].clientX) - rect.left * scaleX,
         y: (event.clientY || event.touches[0].clientY) - rect.top * scaleY,
       };
     }
-
 
     function startDrawing(event, canvas, context) {
       const pos = getMousePosition(event, canvas);
@@ -160,7 +156,6 @@
       event.preventDefault();
     }
 
-    // Stop drawing
     function stopDrawing(event, context) {
       if (is_drawing) {
         context.stroke();
@@ -170,48 +165,44 @@
       event.preventDefault();
     }
 
-    // Initialize both canvases
     initializeCanvas('canvas');
     initializeCanvas('signature');
 
-    // Tool selection handlers
     document.getElementById('pencil').addEventListener('click', function () {
-      draw_color = document.getElementById('color-picker').value; // Use color picker value
-      draw_width = 5; // Pencil width
+      draw_color = document.getElementById('color-picker').value;
+      draw_width = 5;
       current_tool = 'pencil';
     });
 
     document.getElementById('ballpoint-pen').addEventListener('click', function () {
-      draw_color = document.getElementById('color-picker').value; // Use color picker value
-      draw_width = 10; // Ballpoint pen width
+      draw_color = document.getElementById('color-picker').value;
+      draw_width = 10;
       current_tool = 'ballpoint-pen';
     });
 
     document.getElementById('fountain-pen').addEventListener('click', function () {
-      draw_color = document.getElementById('color-picker').value; // Use color picker value
-      draw_width = 20; // Fountain pen width
+      draw_color = document.getElementById('color-picker').value;
+      draw_width = 20;
       current_tool = 'fountain-pen';
     });
 
     document.getElementById('eraser').addEventListener('click', function () {
-      draw_color = "white"; // Eraser color is always white
-      draw_width = 30; // Eraser width
+      draw_color = "white";
+      draw_width = 30;
       current_tool = 'eraser';
     });
 
-    // Color picker event listener
     document.getElementById('color-picker').addEventListener('input', function (event) {
       if (current_tool !== 'eraser') {
-        draw_color = event.target.value; // Update color for drawing tools
+        draw_color = event.target.value;
       }
     });
 
-    // Clear the signature canvas
     document.getElementById('clear-signature').addEventListener('click', function () {
       const signatureCanvas = document.getElementById('signature');
       const context = signatureCanvas.getContext('2d');
-      context.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height); // Clear the entire canvas
-      context.fillStyle = "white"; // Optional: Refill the canvas background if needed
+      context.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+      context.fillStyle = "white";
       context.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
     });
   </script>

@@ -89,11 +89,10 @@ a {
 
 .project {
   display: none;
-  width: 70%;
+  width: 65%;
 }
 
 .project-container {
-  /* border: 1px red solid; */
   display: flex;
   text-align: center;
   align-items: center;

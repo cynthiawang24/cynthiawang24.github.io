@@ -1,25 +1,30 @@
 button {
   font-size: 2rem;
   display: block;
-  margin: 2rem auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, #FFFD4A, white, #0061D3);
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  border-radius: 2rem;
 }
 
 button::before {
-  content: 'hide';
-  /* helpful for setting up style-related elements rather */
+  content: '☀︎ Light Mode';
 }
 
 button.active::before {
-  content: 'show';
+  content: '☾ Dark Mode';
 }
 
-button.active {
-  color: red;
+body.darkmode {
+	background: black;
 }
 
-div {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  margin: 0 auto;
+body.darkmode button{
+	color: white;
+  background: linear-gradient(to right, #FCD2AF, #1170CA, #000F3C);
+  border: 1px solid white;
 }

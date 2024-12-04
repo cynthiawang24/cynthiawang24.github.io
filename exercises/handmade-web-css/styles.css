@@ -1,9 +1,30 @@
-@font-face {
-  font-family: "PF Pixelscript Pro";
-  src: url(fonts/PFPixelscriptPro.woff), "woff";
-  src: url(fonts/PFPixelscriptPro.woff2), "woff2";
-}
+:root {
+  --bg-color: #FFF8DC;
 
+  --red: #FF4500;
+  --light-red: #FF6347;
+  --orange: #FF7F50;
+  --light-orange: #FFA500;
+  --yellow: #FFD700;
+  --gold: #DAA520;
+  --olive: #BDB76B;
+  --green: #9ACD32;
+  --teal: #008B8B;
+
+  --light-blue: #00BFFF;
+  --blue: #1E90FF;
+  --cornflower: #6495ED;
+  --fuscia: #DA70D6; 
+  --lavendar: #D8BFD8;
+
+  --bright-lavendar: #DDA0DD;
+  --purple: #BA55D3 ;
+  --pink: #DB7093;
+  --salmon: #FA8072;
+  
+  --text-color: #228B22;
+  --text-default: black;
+}
 * {
   padding: 0;
   margin: 0;
@@ -15,126 +36,202 @@ html {
 
 body {
   display: block;
-  font-family: "Karla", sans-serif;
-  background-color: #f4f3ea;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-default);
 }
 
 h1 {
   font-size: 3rem;
-  font-family: "PF Pixelscript Pro", serif;
-  color: #0011e4;
+  color: var(--text-color);
+  font-family: "freight-text-pro", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.handwriting {
+  font-family: "chantal", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 h2 {
-  font-family: "PF Pixelscript Pro", serif;
+  font-family: "freight-text-pro", sans-serif;
+  font-weight: 700;
+  font-style: italic;
   font-size: 2rem;
-  color: #0011e4;
+  color: var(--text-color);
 }
 
-h3 {
+.quote-container {
+  padding: 0.5rem 4rem;
+}
+
+.quote-container p {
+  font-family: "freight-text-pro", serif;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--text-color);
   font-size: 1.5rem;
-}
-
-h3 a {
-  color: #ff4097;
 }
 
 p {
   font-size: 1.25rem;
-  line-height: 155%;
+  line-height: 150%;
 }
 
-section {
+body {
+  display: flex;
+}
+
+.side-nav {
+  padding: 2rem 2rem;
+  margin-bottom: 2rem;
+  position: fixed;
+  top: 5.75rem;
+  width: 20%;
+  border-right: 1px solid var(--text-default);
+  height: calc(100vh - 9.75rem);
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem
+  gap: 1rem;
 }
 
-.back-button {
-  padding: 0.75rem 1rem;
+.side-nav::-webkit-scrollbar { 
+  display: none;
+}
+
+p:not(div.i-evoke-container p, div.nav-item p) {
+  padding: 0 4rem;
+}
+
+.side-nav-header {
   position: fixed;
-  width: 100%;
-  background: white;
   top: 0;
+  left: 0rem;
+  width: 20%;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--text-default);
+  border-right: 1px solid var(--text-default);
+  background-color: var(--bg-color);
+  z-index: 1;
 }
 
-.webpage {
-  display: flex;
+.nav-item a {
+  font-family: "freight-text-pro", serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1rem;
 }
 
-.sidenav {
+.content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  top: 0;
-  bottom: 0;
-  position: fixed;
-  padding: 4rem;
-  width: 18rem;
-  overflow-y: scroll;
-  background: #ffc7e7;
+  padding: 1rem 2rem 2rem;
+  margin-left: calc(20% + 4rem);
+  gap: 1.25rem;
 }
 
-.sidenav > div {
+.side-nav .nav-item p {
+  font-size: 1rem;
+  line-height: 130%;
+}
+
+.olia-lialina, .jr-carpenter, .trace-archive, .md-coverley, .anil-dash, .quartz, .gizmodo, .tilde-club, .ubu-web, .unindexed, .taroko-gorge, .daniel-eatock, .lori-emerson {
+  width: calc(100% - 2rem);
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  background: var(--blue);
+  color: var(--text-default);
+  text-decoration: none;
+}
+
+.olia-lialina {
+  background: var(--light-red);
+}
+
+.jr-carpenter {
+  background: var(--yellow);
+}
+
+.trace-archive {
+  background: var(--red);
+}
+
+.md-coverley {
+  background: var(--purple);
+}
+
+.anil-dash {
+  background: var(--orange);
+}
+
+.quartz {
+  background: var(--cornflower);
+}
+
+.gizmodo {
+  background: var(--teal);
+}
+
+.tilde-club {
+  background: var(--fuscia);
+}
+
+.ubu-web {
+  background: var(--green);
+}
+
+.unindexed {
+  background: var(--blue);
+}
+
+.taroko-gorge {
+  background: var(--olive);
+}
+
+.daniel-eatock {
+  background: var(--light-orange);
+}
+
+.lori-emerson {
+  background: var(--bright-lavendar);
+}
+
+.nav-item {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
-ol li{
-  padding-top: 0.5rem;
-}
-
-.main-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-left: 26rem;
-  padding: 4rem;
-}
-
-.main-section > a {
-  font-size: 1.25rem;
-  text-decoration: underline;
-}
-
-.bold-section {
-  padding: 1.5rem;
-  background: #ffc7e7;
-  font-size: 1.5rem;
-  border-radius: 1rem;
-  line-height: 130%;
-  color: #0011e4;
-}
-
-.quote-section {
-  padding: 0 1.5rem;
-  font-size: 1.675rem;
-  line-height: 130%;
-  color: #c10000;
-}
-
 a {
-  text-decoration: none;
-  color: #0011e4;
-  font-weight: 600;
-}
-
-a:hover {
-  color: #dbff08;
-  transition: 300ms ease-in-out;
-}
-
-.underline {
-  text-decoration-line: underline;
-  text-decoration-style: wavy;
-  font-size: 1.25rem;
-}
-
-.underline:hover {
-  color: #ff4097;
+  text-decoration: underline;
+  color: inherit;
+  font-weight: 500;
+  font-size: inherit;
 }
 
 .subheading {
-  font-size: 1.125rem;
+  color:var(--text-color);
+  font-size: 1rem;
+}
+
+.source {
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.i-evoke-container {
+  margin: 1rem 0;
+  background: var(--olive);
+  padding: 1rem 1.5rem;
+}
+
+.author {
+  font-family: "freight-text-pro", sans-serif;
+  font-weight: 700;
+  font-style: italic;
 }
